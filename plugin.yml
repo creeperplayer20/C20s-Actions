@@ -1,0 +1,5 @@
+name: c20s-actions
+version: 0.0.1
+main: creeperplayer20\actions\Main
+api: 4.0.8
+src-namespace-prefix: creeperplayer20\actions
