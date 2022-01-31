@@ -1,0 +1,5 @@
+# $name - represents player name
+
+join: "[§a+§f]§e $name §ajoined the server§f!"
+
+leave: "[§c-§f]§e $name §cleft the server§f!"
