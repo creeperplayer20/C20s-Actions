@@ -1,4 +1,5 @@
-# $name - represents player name
+# $name = player name
+# § = color tag
 
 join: "[§a+§f]§e $name §ajoined the server§f!"
 
