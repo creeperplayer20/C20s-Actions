@@ -16,15 +16,8 @@ class Main extends PluginBase implements Listener {
 public function onEnable() : void{
 
 $this->getServer()->getPluginManager()->registerEvents($this, $this);
-$this->reloadConfig();
+
 $this->saveDefaultConfig();
-$this->getConfig()->save();
-
-}
-
-public function onDisable() : void{
-
-$this->getLogger()->info("[§aC20§r - §eActions§r] §4Plugin is disabled!");
 
 }
 
