@@ -1,6 +1,19 @@
 # $name = player name
+# $time = current time
 # § = color tag
+# \n = new line
 
+timezone: 'Europe/Prague'
+
+#custom time format
+#h = hours; i = minutes; s = seconds
+timeFormat: 'h:i:s'
+
+joinEnable: true #true = enabled; false = disabled
 join: "[§a+§f]§e $name §ajoined the server§f!"
 
+leaveEnable: true #true = enabled; false = disabled
 leave: "[§c-§f]§e $name §cleft the server§f!"
+
+firstTimeEnable: true #true = enabled; false = disabled
+firstTimeJoin: "[§5+§f]§e $name §djoined the server for the first time§f!"
