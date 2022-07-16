@@ -20,9 +20,7 @@ class Main extends PluginBase implements Listener {
         @mkdir($this->getDataFolder() . "players/");
         
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        
-        date_default_timezone_set($this->getConfig()->get("timezone"));
-        
+          
         $this->saveDefaultConfig();
 
     }
