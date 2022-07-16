@@ -10,7 +10,7 @@ Fully customizable message that will be shown when player joins, quits or joins 
 
 ### Config
 
-<img src="https://github.com/creeperplayer20/C20s-Actions/blob/main/config.png" alt="C20s Actions Config" title="C20s Actions Config" align="center">
+<img src="https://github.com/creeperplayer20/C20s-Actions/blob/main/configPic.png" alt="C20s Actions Config" title="C20s Actions Config" align="center">
 
 ### Screenshots
 
