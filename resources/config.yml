@@ -3,8 +3,6 @@
 # § = color tag
 # \n = new line
 
-timezone: 'Europe/Prague'
-
 #custom time format
 #h = hours; i = minutes; s = seconds
 timeFormat: 'h:i:s'
