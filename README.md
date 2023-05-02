@@ -1,6 +1,6 @@
 <img src="https://github.com/creeperplayer20/C20s-Actions/blob/main/icon.png" alt="C20s Actions Logo" title="C20s Actions" align="center">
 
-# C20s-Actions
+# Welcome
 Fully customizable message that will be shown when player joins, quits or joins for the first time.
 
 ### Features
