@@ -8,10 +8,13 @@
 timeFormat: 'h:i:s'
 
 joinEnable: true #true = enabled; false = disabled
-join: "[§a+§f]§e $name §ajoined the server§f!"
+join: "Change me In config.yml at Line 11"
 
 leaveEnable: true #true = enabled; false = disabled
-leave: "[§c-§f]§e $name §cleft the server§f!"
+leave: "Change me In config.yml at Line 14"
 
-firstTimeEnable: true #true = enabled; false = disabled
-firstTimeJoin: "[§5+§f]§e $name §djoined the server for the first time§f!"
+firstTimeEnable: false #true = enabled; false = disabled
+firstTimeJoin: "Change me!"
+# Maded By ThorMagHunde and Hope20
+# Normal Lanuage: Italiano, New Lanuage: English
+# Plugin: ThorMagHunde
