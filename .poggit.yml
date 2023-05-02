@@ -3,6 +3,6 @@ build-by-default: true
 branches:
 - main
 projects:
-  C20s-Actions:
+  CustomMessages4:
     path: ""
 ...
