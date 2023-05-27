@@ -4,5 +4,5 @@ branches:
 - main
 projects:
   CustomMessage4:
-    path: "icon.png"
+    path: ""
 ...
