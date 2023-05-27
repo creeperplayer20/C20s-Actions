@@ -3,6 +3,6 @@ build-by-default: true
 branches:
 - main
 projects:
-  CustomMessage4:
-    path: ""
+  CustomMessagePM4:
+    path: "icon.png"
 ...
