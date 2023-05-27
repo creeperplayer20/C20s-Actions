@@ -1,5 +1,5 @@
-name: CustomNachrichten
-version: 1.30.1
+name: CustomNachrichtenPM4
+version: 1.31.4-PM4
 author: Thor
 main: Thor\actions\Main
 api: 4.0.0
