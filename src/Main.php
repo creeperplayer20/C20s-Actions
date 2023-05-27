@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace creeperplayer20\actions;
+namespace Thor\actions;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
