@@ -8,13 +8,15 @@
 timeFormat: 'h:i:s'
 
 joinEnable: true #true = enabled; false = disabled
-join: "Change me In config.yml at Line 11"
+join: "§8[§a+§8] §7$name"
 
 leaveEnable: true #true = enabled; false = disabled
-leave: "Change me In config.yml at Line 14"
+leave: "§8[§c-§8] §7$name"
 
 firstTimeEnable: false #true = enabled; false = disabled
 firstTimeJoin: "Change me!"
 # Maded By ThorMagHunde and Hope20
 # Normal Lanuage: Italiano, New Lanuage: English
 # Plugin: ThorMagHunde
+# Changelog:
+# Fixed config.yml
