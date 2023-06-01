@@ -10,13 +10,13 @@ Fully customizable message that will be shown when player joins, quits or joins 
 
 ### 📂 Config
 
-<img src="https://github.com/creeperplayer20/C20s-Actions/blob/main/configPic.png" alt="C20s Actions Config" title="C20s Actions Config" align="center">
+![config](https://github.com/creeperplayer20/C20s-Actions/assets/42560781/53f28430-3682-4e63-af52-88382ca19b2c)
 
 ### 🖼️ Images
 
-<img src="https://github.com/creeperplayer20/C20s-Actions/blob/main/firstTime.png" alt="C20s Actions First Time Join" title="C20s Actions First Time Join" align="center">
-<img src="https://github.com/creeperplayer20/C20s-Actions/blob/main/join.png" alt="C20s Actions Join" title="C20s Actions Join" align="center">
-<img src="https://github.com/creeperplayer20/C20s-Actions/blob/main/leave.png" alt="C20s Actions Leave" title="C20s Actions Leave" align="center">
+![firstTime](https://github.com/creeperplayer20/C20s-Actions/assets/42560781/61c13157-5c0c-412e-abea-eaf7c72ad89a)
+![join](https://github.com/creeperplayer20/C20s-Actions/assets/42560781/8d770383-3662-4245-94bf-72cd4fedd0e5)
+![leave](https://github.com/creeperplayer20/C20s-Actions/assets/42560781/86ddc7aa-e3a5-4e76-b507-aeb518648ac8)
 
 ### 🔮 Other
 > You are welcome to provide suggestions and report any issues related to the plugin by submitting them here [GitHub](https://github.com/creeperplayer20/C20s-Actions/issues) or here [Discord](https://discord.gg/dmrBe8eUDJ).
