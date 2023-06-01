@@ -1,6 +1,6 @@
 name: C20s-Actions
-version: 0.0.1
+version: 0.0.2
 author: creeperplayer20
 main: creeperplayer20\actions\Main
-api: 4.5.2
+api: 5.0.0
 src-namespace-prefix: creeperplayer20\actions
