@@ -6,73 +6,88 @@ namespace creeperplayer20\actions;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\event\player\PlayerJoinEvent;
-use pocketmine\event\player\PlayerQuitEvent;
-use pocketmine\Player;
-use pocketmine\Server;
+use pocketmine\event\player\{PlayerJoinEvent, PlayerQuitEvent};
 use pocketmine\utils\Config;
 use function date;
 
-class Main extends PluginBase implements Listener {
+class Main extends PluginBase implements Listener
+{
+    private $config;
 
-    public function onEnable() : void{
-
+    function onEnable(): void
+    {
         @mkdir($this->getDataFolder() . "players/");
-        
+
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-          
+
         $this->saveDefaultConfig();
-
     }
-        
-    public function onJoin(PlayerJoinEvent $event){
 
+    function onJoin(PlayerJoinEvent $event)
+    {
         $player = $event->getPlayer()->getName();
-        
-        //FirstTimeMsg
-        $this->config = new Config($this->getDataFolder() . "players/" . strtolower($player . ".yml"), Config::YAML, array(
-            "playedBefore" => false
-        ));
-        $this->config;
-        $this->config->save();
-        
-        if($this->getConfig()->get("firstTimeEnable") == true && $this->config->get("playedBefore") == false){
-        
-            $firstTimeJoin = $this->getConfig()->get("firstTimeJoin");
-            $firstTimeJoin = str_replace("\$name", $player, $firstTimeJoin);
-            $firstTimeJoin = str_replace("\$time", date($this->getConfig()->get("timeFormat") . ' a', time()), $firstTimeJoin);
-        
-            $this->config = new Config($this->getDataFolder() . "players/" . strtolower($player . ".yml"), Config::YAML);
-            $this->config->set("playedBefore" , true);
-            $this->config->save();
-            
-            $event->setJoinMessage($firstTimeJoin); 
-        //JoinMsg
-        } else if($this->getConfig()->get("joinEnable") == true && $this->config->get("playedBefore") == true || $this->getConfig()->get("firstTimeEnable") == false){ 
 
+        $this->config = new Config($this->getDataFolder() . "players/" . $player . ".yml", Config::YAML);
+
+        if (!$this->config->exists("playedBefore")) {
+            $this->config->set("playedBefore", false);
+            $this->config->save();
+
+            if ($this->getConfig()->get("firstTimeEnable") && !$this->config->get("playedBefore")) {
+                $firstTimeJoin = $this->getConfig()->get("firstTimeJoin");
+
+                $event->setJoinMessage($this->firstTimeJoin($firstTimeJoin, $player, $this->config));
+                return;
+            }
+        }
+
+        if ($this->getConfig()->get("joinEnable") && $this->config->get("playedBefore") || !$this->getConfig()->get("firstTimeEnable")) {
             $joinMsg = $this->getConfig()->get("join");
 
-            $joinMsg = str_replace("\$name", $player, $joinMsg);
-            $joinMsg = str_replace("\$time", date($this->getConfig()->get("timeFormat") . ' a', time()), $joinMsg);
+            $joinMsg = $this->replace($joinMsg, [
+                "\$name" => $player,
+                "\$time" => date($this->getConfig()->get("timeFormat") . ' a', time())
+            ]);
 
             $event->setJoinMessage($joinMsg);
-
+            return;
         }
     }
-        
-    public function onQuit(PlayerQuitEvent $event){
-        
+
+    function onQuit(PlayerQuitEvent $event)
+    {
         $player = $event->getPlayer()->getName();
-        
-        //LeaveMsg
-        if($this->getConfig()->get("leaveEnable") == true){
 
+        if ($this->getConfig()->get("leaveEnable")) {
             $leaveMsg = $this->getConfig()->get("leave");
-            $leaveMsg = str_replace("\$name", $player, $leaveMsg);
-            $leaveMsg = str_replace("\$time", date($this->getConfig()->get("timeFormat") . ' a', time()), $leaveMsg);
-        
-            $event->setQuitMessage($leaveMsg);
 
+            $leaveMsg = $this->replace($leaveMsg, [
+                "\$name" => $player,
+                "\$time" => date($this->getConfig()->get("timeFormat") . ' a', time())
+            ]);
+
+            $event->setQuitMessage($leaveMsg);
         }
+    }
+
+    function replace(string $string, array $replace): string
+    {
+        foreach ($replace as $key => $value) {
+            $string = str_replace($key, $value, $string);
+        }
+        return $string;
+    }
+
+    function firstTimeJoin(string $string, string $player, Config $config)
+    {
+        $firstTimeJoin = $this->replace($string, [
+            "\$name" => $player,
+            "\$time" => date($this->getConfig()->get("timeFormat") . ' a', time())
+        ]);
+
+        $this->config->set("playedBefore", true);
+        $this->config->save();
+
+        return $firstTimeJoin;
     }
 }
